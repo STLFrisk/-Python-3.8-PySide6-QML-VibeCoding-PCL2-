@@ -1,0 +1,50 @@
+# ---- Python 字节码 / 缓存 (可再生, 不应入库; .pyc 里会内嵌本机绝对路径) ----
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- 日志与一次性探针 ----
+*.log
+_*
+
+# 例外: _* 规则不能吃掉包自身的 __init__.py (上游 vendor 套件必须完整入库)
+!pclpy/__init__.py
+!pclpy/core/__init__.py
+!pclpy/backend/__init__.py
+!vendor/FluentUI/__init__.py
+
+# ---- 启动器运行期目录 (配置 / 缓存 / 下载 / 游戏目录) ----
+.pclpy/
+Download/
+pclpy_cache/
+*.tmp
+
+# ---- 配置文件 (可能含账号名与本机绝对路径) ----
+config.json
+*_config.json
+settings.json
+*.ini.bak
+
+# ---- 临时目录 / 开发过程产物 ----
+_before_shots/
+_sub_tmp_home/
+_build*/
+*.spec
+shots/*.tmp
+shots/_anim_*.png
+
+# ---- 编辑器 / 操作系统杂物 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+*.orig
+*.rej
+*~
