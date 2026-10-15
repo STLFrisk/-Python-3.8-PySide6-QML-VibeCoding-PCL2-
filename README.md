@@ -3,8 +3,6 @@
 CraftPilot 是完全！由VibeCoding的产物。是一个用 **Python + PySide6 + QML** 编写的 Minecraft 启动器：界面参考 PCL2 逐页实现，
 后端负责版本安装、整合包安装、社区资源检索与下载、启动与日志。
 
-> 工程目录名仍是 `pcl_py`、Python 包名仍是 `pclpy`（历史命名），窗口标题与显示名是 **CraftPilot**。
-
 界面**全部用 QML 描述**（`qml/`），Python 只负责逻辑与数据：QML 由 Python 端的 `QQmlApplicationEngine`
 加载，后端以 `context property` 注入，所以改界面只需要编辑 `.qml`，不用碰 Python。
 窗口 **960×640** 起（可拉伸、可最大化），外壳为自绘标题栏 + 圆角，内容区组件来自内嵌的
@@ -20,9 +18,9 @@ PySide6-FluentUI-QML 套件。
 
 ---
 
-## 免责声明与授权说明
+## 免责声明
 
-> **本项目使用的若干 API 与下载源并未获得正式授权，仅为测试目的使用。**
+> **本项目使用的大部分 API 与下载源为官方源或公开源，如有不符合使用协议的，仅为测试目的使用。**
 
 具体涉及的第三方服务与端点（均来自代码，非推测）：
 
@@ -237,7 +235,7 @@ Windows 下也可直接双击 `run.bat`（用 `pythonw.exe` 启动，不弹 cmd 
   > 取证时该克隆的 remote 为`https://github.com/Meloong-Git/PCL.git`（HEAD `f8584954`，2026-10-13），
   > 而 `Hex-Dragon/PCL2` 会重定向到同一个仓库 —— 两者是同一份源码的两个地址。
   > 对照结论（每条带 `文件:行号`，如 `ModNet.vb:857-862`、`ModMinecraft.vb:227-266`）见
-  > **`PCL2_ANALYSIS.md`**。源码只读、不修改。
+  > **`PCL2_ANALYSIS.md`**。
 * **PySide6-FluentUI-QML 1.6.7**：内容区控件套件，来源仓库 `https://github.com/zhuzichu520/FluentUI`
   （版本号取自 `vendor/PySide6_FluentUI_QML-1.6.7.dist-info/METADATA`；LICENSE 在该 dist-info 内，
   本仓库未改写其任何文件）。外壳不使用它，外壳是自绘实现。
